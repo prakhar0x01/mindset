@@ -1,0 +1,85 @@
+<style>
+.video-wrapper {
+  display: inline-block;
+  margin: 10px;
+  margin-left:40px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.no-videos {
+  text-align: center;
+  font-size: 16px;
+  margin: 20px;
+}
+body {
+  font-family: sans-serif;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+header {
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+nav {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 600;
+}
+
+</style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Read</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="/" class="logo"><img src="logo.png" alt="Mindset Logo"></a>
+    <nav>
+      <ul>
+        <li><a href="/protected">Home</a></li>
+        <li><a href="/about_us">About Us</a></li>
+        <li><a href="/support">Contact & Support</a></li>
+      </ul>
+    </nav>
+  </header>
+{% if option_videos %}
+  {% for video_link in option_videos %}
+    <div class="video-wrapper">
+      <iframe width="550" height="350" src="{{ video_link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  {% endfor %}
+{% else %}
+  <p class="no-videos">No videos found for the selected option.</p>
+{% endif %}
+</body>

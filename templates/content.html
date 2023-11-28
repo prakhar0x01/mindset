@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {
+  font-family: sans-serif;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.content-admin {
+  width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.content-admin h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.content-admin p {
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+.input-group-addon {
+  padding: 5px 10px;
+  background-color: #ccc;
+  border: 1px solid #ccc;
+}
+
+.form-control {
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #EC6244;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.message {
+
+</style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mindset Content Management Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="content-admin">
+    <h1>Mindset Content Management Portal</h1><hr>
+    <p>Enter a YouTube video-id & link and select the appropriate options:</p>
+    <br>
+    <form method="POST" action="/admin/content">
+      <div class="form-group">
+        <label for="videoLink">YouTube Video Link:</label>
+        <div class="input-group">
+          <span class="input-group-addon">https://youtube.com/embed/</span>
+          <input type="text" id="link" name="link" placeholder="video-id and link" class="form-control" required>
+          <span class="input-group-addon">&amp;amp;controls=0</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="tags">Tags:</label>
+        <select id="option" name="option" class="form-control" required>
+          <option value="procrastination">Procrastination</option>
+          <option value="financial_problems">Financial Problems</option>
+          <option value="addiction">Addiction</option>
+          <option value="heartbreak">HeartBreak</option>
+          <option value="stress">Stress</option>
+          <option value="move_out">Moveout</option>
+          <option value="is_male">Mens Perspective</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="content_type">Content-Type:</label>
+        <select id="content_type" name="content_type" class="form-control" required>
+          <option value="reel">Shorts/Reels</option>
+          <option value="video">Long form Videos</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <div class="message">
+      {% if success %}
+        <div class="success-message">
+          <p style="color:green;">{{ success }}</p>
+        </div>
+      {% endif %}
+
+      {% if error %}
+        <div class="error-message">
+          <p style="color:red;">{{ error }}</p>
+        </div>
+      {% endif %}
+    </div>
+    <br>
+    <a href="/admin"><button class="btn btn-secondary">Back</button></a>
+  </div>
+</body>
+</html>

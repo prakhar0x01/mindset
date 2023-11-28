@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+    body {
+  font-family: sans-serif;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.tickets-page {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.tickets-page h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.alert {
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.alert-success {
+  background-color: #dff0d8;
+  color: #3c763d;
+}
+
+.ticket-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #EC6244;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: 600;
+}
+
+    </style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tickets</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="tickets-page">
+    <h1>Mindset Ticket Management Portal</h1>
+
+    {% if success %}
+      <div class="alert alert-success">{{ success }}</div>
+    {% endif %}
+
+    <table class="ticket-table">
+      <thead>
+        <tr>
+          <th>Ticket ID</th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Message</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for ticket in tickets %}
+          <tr>
+            <td>{{ ticket['ticket_id'] }}</td>
+            <td>{{ ticket['name'] }}</td>
+            <td>{{ ticket['username'] }}</td>
+            <td>{{ ticket['email'] }}</td>
+            <td>{{ ticket['message'] }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br><a href="/admin"><button class="btn btn-secondary">Back</button></a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create your Mindset account</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .signup-page {
+      width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+    }
+
+    .signup-page h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .signup-form {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+    }
+
+    .signup-form label {
+      margin-bottom: 5px;
+      margin-top: 10px;
+    }
+
+    .signup-form input {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .signup-form button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .signup-form .error-message {
+      color: red;
+      text-align:center;
+    }
+  </style>
+</head>
+<body><br><br>
+  <div class="signup-page">
+    <h2>Create your Mindset account</h2>
+
+    <form method="POST" action="/signup" class="signup-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" maxlength="10" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" maxlength="20" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <br>
+
+      <div class="signup-form-additional">
+        <h4>Additional details</h4><hr>
+        <p>Choose the below options Carefully, This affects the content you'll see in your dashboard.</p><hr>
+        
+        <label for="gender">Gender:</label>
+         <select id="gender" name="gender" required>
+           <option value="male">Male</option>
+           <option value="female">Female</option>
+         </select><br>
+
+        <label for="financial_problems">Do you have any <b>financial problems?</b></label>
+        <select id="financial_problems" name="financial_problems" required>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+
+        <label for="procrastination">Do you suffer from <b>procrastination?</b></label>
+        <select id="procrastination" name="procrastination" required>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+
+        <label for="addiction">Do you have any <b>addictions?</b></label>
+        <select id="addiction" name="addiction" required>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+
+        <label for="heartbreak">Do you have any <b>heartbreak or emotionally hurt?</b></label>
+        <select id="heartbreak" name="heartbreak" required>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+
+        <label for="stress">Do you suffer from <b>stress/Depression?</b></label>
+        <select id="stress" name="stress" required>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+
+        <label for="move_out">Do you <b>want to grow or just move out from your current environment?</b></label>
+        <select id="move_out" name="move_out" required>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+
+      <br>
+
+      <button type="submit">Create my account</button>
+      <p class="error-message">{{ error }}</p>
+      <p style="text-align: center;">Already have an account? <a href="/login">Sign in</a></p>
+    </form>
+  </div>
+</body>
+</html>

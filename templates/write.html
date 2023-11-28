@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+body {
+  font-family: sans-serif;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.blog-publish {
+  width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.blog-publish h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  margin-right:20px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #EC6244;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.message {
+  margin-top: 20px;
+}
+
+.success-message, .error-message {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.success-message {
+  background-color: #dff0d8;
+  color: green;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: red;
+}
+
+</style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publish Blog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="blog-publish">
+    <h1>Publish Articles/Blogs</h1>
+
+    <form action="/admin/publish" method="post">
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input style="font-size:20px;" type="text" id="title" name="title" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+        <label for="content">Content:</label>
+        <textarea style="font-size:15px;" id="content" name="content" class="form-control" rows="10" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Publish</button>
+    </form><br>
+    <a href="/admin"><button class="btn btn-secondary">Back</button></a>
+
+    <div class="message">
+      {% if success %}
+        <div class="success-message">
+          <p>{{ success }}</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</body>
+</html>

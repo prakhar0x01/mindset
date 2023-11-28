@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #f0f0f0;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+    }
+
+    .user-info p {
+      margin: 10px;
+      font-weight: bold;
+    }
+
+    .links {
+      display: flex;
+      margin-top: 10px;
+    }
+
+    .links a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .main-content {
+      padding: 20px;
+    }
+
+    .main-content h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .card {
+      width: 300px;
+      margin: 10px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .card a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="user-info">
+      <p>{{ username }}</p>
+      <!--<p>{{ email }}</p>-->
+    </div>
+
+    <div class="links">
+      <a href="/support">Contact-Us/Support</a>
+      <a href="/about_us">About Us</a>
+      <a href="/logout">Logout&nbsp;&nbsp;&nbsp;</a>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <h2>Discover</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Watch shortform Content</h3>
+        <a href="/protected/shorts">Start Watching</a>
+      </div>
+
+      <div class="card">
+        <h3>Read Content</h3>
+        <a href="/protected/read">Read Latest Posts</a>
+      </div>
+
+      <div class="card">
+        <h3>Watch Longform Content</h3>
+        <a href="/protected/videos">Start Watching</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

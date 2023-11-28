@@ -1,0 +1,78 @@
+<style>
+.admin-table {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: 600;
+}
+
+.admin-buttons {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #EC6244;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+</style>
+{% block content %}
+  <div class="admin-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Password (SHA-256)</th>
+          <th>Male</th>
+          <th>Financial Problems</th>
+          <th>Procrastination</th>
+          <th>Addiction</th>
+          <th>Heartbreak</th>
+          <th>Stress</th>
+          <th>Move Out</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in users %}
+          <tr>
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.password }}</td>
+            <td>{{ user.is_male }}</td>
+            <td>{{ user.financial_problems }}</td>
+            <td>{{ user.procrastination }}</td>
+            <td>{{ user.addiction }}</td>
+            <td>{{ user.heartbreak }}</td>
+            <td>{{ user.stress }}</td>
+            <td>{{ user.move_out }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="admin-buttons">
+    <a href="/admin/content"><button>Media Content</button></a>&nbsp;
+    <a href="/admin/publish"><button>Write Content</button></a>&nbsp;
+    <a href="/"><button>Back to Mindset</button></a>&nbsp;
+    <a href="/admin/tickets"><button>View Support Tickets</button></a>
+  </div>
+{% endblock %}

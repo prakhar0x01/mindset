@@ -1,0 +1,44 @@
+[
+    {
+        "ticket_id": 2025,
+        "name": "admin",
+        "username": "admin",
+        "email": "admin@mindset.com",
+        "message": "this is my test support ticket"
+    },
+    {
+        "ticket_id": 2026,
+        "name": "admin",
+        "username": "admin",
+        "email": "admin@mindset.com",
+        "message": "this is my test support ticket"
+    },
+    {
+        "ticket_id": 2027,
+        "name": "admin",
+        "username": "admin",
+        "email": "admin@mindset.com",
+        "message": "this is my test support ticket"
+    },
+    {
+        "ticket_id": 2028,
+        "name": "admin",
+        "username": "admin",
+        "email": "admin@mindset.com",
+        "message": "this is my test support ticket"
+    },
+    {
+        "ticket_id": 2029,
+        "name": "Prakhar Porwal",
+        "username": "admin",
+        "email": "admin@mindset.com",
+        "message": "Hii this is from prakhar please check this ASAP"
+    },
+    {
+        "ticket_id": 2030,
+        "name": "Prakhar Porwal",
+        "username": "admin",
+        "email": "admin@mindset.com",
+        "message": "Hii this is from prakhar please check this ASAP"
+    }
+]

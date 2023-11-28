@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mindset Support - Create Ticket</title>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: 600;
+    }
+
+    main {
+      margin: 20px;
+    }
+
+    .support-form {
+      width: 500px;
+      background-color: #fff;
+      margin-left:410px;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+
+    .support-form h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .support-form label {
+      margin-bottom: 10px;
+      margin-top: 15px;
+      display: block;
+    }
+
+    .support-form input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      width: 95%;
+    }
+
+    .support-form button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      margin-top:10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .success-message {
+      margin-top: 10px;
+      text-align: center;
+      color:green;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/protected"><img src="logo.png" alt="Mindset Logo"></a>
+    <a href="/logout">Logout</a>
+  </header>
+
+  <main>
+    <div class="support-form">
+      <h2>Create Support Ticket</h2>
+
+      <form action="/support" method="post">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="message">Query:</label>
+        <textarea id="message" name="message" rows="10" required></textarea>
+        <br>
+        <button type="submit">Submit Ticket</button>
+        <br>
+        {% if success %}
+          <div class="success-message">{{ success }}</div>
+        {% endif %}
+      </form>
+    </div>
+  </main>
+</body>
+</html>
