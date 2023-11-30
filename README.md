@@ -1,9 +1,9 @@
 # MindSet 
-#### ~ Originally Developed and created by **Prakhar Porwal** 💀
+#### ~ Originally Developed and created by _Prakhar Porwal_ 💀
 **Mindset:** A Personalized Support Platform for Mental Well-being where no algorithm spoils your mental well-being.
 
 Mindset is a web application that provides personalized support and resources for individuals navigating mental health challenges. Through user-friendly features and personalized recommendations, Mindset empowers users to take charge of their mental well-being and connect with supportive communities.
-
+<br>
 ## Key Features:
 
 **Personalized Video Recommendations:** Based on your selected preferences, Mindset curates a collection of relevant reels and long-form videos to address your concerns.
@@ -13,7 +13,7 @@ Mindset is a web application that provides personalized support and resources fo
 **Secure and Confidential:** Mindset prioritizes user privacy and data security, ensuring your information remains confidential.
 
 **Admin Portal for Content Management and Support Ticket Management:** Admins can manage content, upload videos, and view user support tickets.
-
+<br>
 ## Benefits:
 
 **Personalized Support:** Access tailored resources and recommendations that align with your unique needs.
@@ -23,7 +23,7 @@ Mindset is a web application that provides personalized support and resources fo
 **Supportive Community:** Connect with others facing similar challenges and foster a sense of belonging.
 
 **Convenient Access:** Access support from anywhere, anytime, using your web browser.
-
+<br>
 ## Target Audience:
 
 Mindset is designed for individuals seeking personalized support for mental health challenges, including:
@@ -44,37 +44,37 @@ Mindset is designed for individuals seeking personalized support for mental heal
 **User Authentication**
 - The application utilizes Flask-Login for user authentication and authorization. Users can sign up, log in, and log out. Admin users have additional privileges to manage content and view support tickets.
 
-<br>
+### Signup Page
+![image](https://github.com/prakhar0x01/mindset/assets/89337486/df62cbe3-ab21-48df-9582-bd6dd640b6db)
 
-<img src=images/signup.png>
-<img src=images/login.png>
-<br>
+### Login Page
+![image](https://github.com/prakhar0x01/mindset/raw/main/images/login.png)
 
 **Content Management**
 - Admins can upload reels and long-form videos via the `/admin/content` route. The uploaded content is stored in separate text files based on content type (reel or video).
 
-<br>
+### Admin Portal
+![image](https://github.com/prakhar0x01/mindset/raw/main/images/users.png)
 
-<img src=images/users.png>
-<img src=images/write_publish.png>
-<img src=images/content_mgmt.png>
+### Publish Writings (Admin)
+![image](https://github.com/prakhar0x01/mindset/raw/main/images/users.png)
 
-<br>
+### Admin Content Management
+![image](https://github.com/prakhar0x01/mindset/blob/main/images/content_mgmt.png)
 
 **Conditional Video Recommendations**
 - Users can access personalized video recommendations based on their selected preferences during signup. The application checks the user's preferences against the video content and displays relevant videos on the `/protected/shorts` and `/protected/videos` routes.
 
 **Support Tickets**
 - Users can create support tickets by submitting their name and message via the `/support` route. Admins can view all support tickets on the `/admin/tickets` route.
-<br>
-<img src=images/support.png>
-<br>
+
+### Support Ticket 
+![image](https://github.com/prakhar0x01/mindset/raw/main/images/support.png)
 
 **About Us Page**
 - The `/about_us` route displays a simple 'About Us' page.
-<br>
-<img src=images/about_us.png>
-<br>
+### About-Us Page
+![image](https://github.com/prakhar0x01/mindset/blob/main/images/about_us.png)
 
 **Application Structure**
 - The application is organized into several routes, each handling specific functionalities:
@@ -92,9 +92,10 @@ Mindset is designed for individuals seeking personalized support for mental heal
 /protected/shorts: Display reels based on user preferences
 /protected/videos: Display long-form videos based on user preferences
 /protected/read: Display blog posts
-/support: Create support ticket route
+/support: Create a support ticket route
 /about_us: About Us page
 ```
+<hr>
 
 # Tech Stack:
 
@@ -118,3 +119,26 @@ Mindset is designed for individuals seeking personalized support for mental heal
                                             v
                                         [Deployment]
 ```
+
+## **IMPORTANT NOTE**
+Before running the application, make sure to create a test & admin account from the `/signup` endpoint.
+- I added a GET request-based authentication condition on every `/admin` route which **is NOT secure enough** because anyone can easily perform the POST request. I made this app in 2-3 days so I didn't implement any strong restrictions but you can ..!! (BTW if you can implement RESTful APIs in this project feel free to create a PR)
+
+### Admin Portal
+```
+@app.route('/admin', methods=['GET'])
+@login_required
+def internal():
+    if request.method == 'GET': 
+        if current_user.username != 'admin':
+            return redirect(url_for('login'))
+
+    users = User.query.all()
+    return render_template('users.html', users=users)
+ 
+```
+
+- Or you can change the username in the code as per your suitability.
+
+## Please Read This.
+- I developed this app myself in a very short time frame(2-3 days). If you're interested in RESTful APIs or just want to develop this project in any manner feel free to collaborate, just create a PR for your idea/implementation, and I would love to add you as a contributor.
