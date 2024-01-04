@@ -20,8 +20,6 @@ Mindset is a web application that provides personalized support and resources fo
 
 **Empowerment and Self-management:** Take control of your mental well-being with personalized guidance and support.
 
-**Supportive Community:** Connect with others facing similar challenges and foster a sense of belonging.
-
 **Convenient Access:** Access support from anywhere, anytime, using your web browser.
 <br>
 ## Target Audience:
@@ -50,11 +48,13 @@ Mindset is designed for individuals seeking personalized support for mental heal
 ### Login Page
 ![image](images/login.png)
 
-**Content Management**
-- Admins can upload reels and long-form videos via the `/admin/content` route. The uploaded content is stored in separate text files based on content type (reel or video).
-
 ### Admin Portal
 ![image](images/users.png)
+
+<hr>
+
+## **Content Management**
+- Admins can upload reels and long-form videos via the `/admin/content` route. The uploaded content is stored in separate text files based on content type (reel or video).
 
 ### Publish Writings (Admin)
 ![image](images/write_publish.png)
@@ -65,15 +65,17 @@ Mindset is designed for individuals seeking personalized support for mental heal
 **Conditional Video Recommendations**
 - Users can access personalized video recommendations based on their selected preferences during signup. The application checks the user's preferences against the video content and displays relevant videos on the `/protected/shorts` and `/protected/videos` routes.
 
-**Support Tickets**
-- Users can create support tickets by submitting their name and message via the `/support` route. Admins can view all support tickets on the `/admin/tickets` route.
-
 ### Support Ticket 
+- Users can create support tickets by submitting their name and message via the `/support` route. Admins can view all support tickets on the `/admin/tickets` route.
+  
 ![image](images/support.png)
 
-**About Us Page**
-- The `/about_us` route displays a simple 'About Us' page.
+### Support Tickets Management
+![image](images/ticket_mgmt.png)
+
 ### About-Us Page
+- The `/about_us` route displays a simple 'About Us' page.
+
 ![image](images/about_us.png)
 
 **Application Structure**
@@ -97,7 +99,7 @@ Mindset is designed for individuals seeking personalized support for mental heal
 ```
 <hr>
 
-# Tech Stack:
+## Tech Stack:
 
 **Front-end**: HTML, CSS, (or you can use JS) <br>
 **Back-end**: Flask, Flask-SQLAlchemy, Flask-Login <br>
