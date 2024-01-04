@@ -48,19 +48,19 @@ Mindset is designed for individuals seeking personalized support for mental heal
 ![image](https://github.com/prakhar0x01/mindset/assets/89337486/df62cbe3-ab21-48df-9582-bd6dd640b6db)
 
 ### Login Page
-![image](https://github.com/prakhar0x01/mindset/raw/main/images/login.png)
+![image](images/login.png)
 
 **Content Management**
 - Admins can upload reels and long-form videos via the `/admin/content` route. The uploaded content is stored in separate text files based on content type (reel or video).
 
 ### Admin Portal
-![image](https://github.com/prakhar0x01/mindset/raw/main/images/users.png)
+![image](images/users.png)
 
 ### Publish Writings (Admin)
-![image](https://github.com/prakhar0x01/mindset/raw/main/images/users.png)
+![image](images/write_publish.png)
 
 ### Admin Content Management
-![image](https://github.com/prakhar0x01/mindset/blob/main/images/content_mgmt.png)
+![image](images/content_mgmt.png)
 
 **Conditional Video Recommendations**
 - Users can access personalized video recommendations based on their selected preferences during signup. The application checks the user's preferences against the video content and displays relevant videos on the `/protected/shorts` and `/protected/videos` routes.
@@ -69,12 +69,12 @@ Mindset is designed for individuals seeking personalized support for mental heal
 - Users can create support tickets by submitting their name and message via the `/support` route. Admins can view all support tickets on the `/admin/tickets` route.
 
 ### Support Ticket 
-![image](https://github.com/prakhar0x01/mindset/raw/main/images/support.png)
+![image](images/support.png)
 
 **About Us Page**
 - The `/about_us` route displays a simple 'About Us' page.
 ### About-Us Page
-![image](https://github.com/prakhar0x01/mindset/blob/main/images/about_us.png)
+![image](images/about_us.png)
 
 **Application Structure**
 - The application is organized into several routes, each handling specific functionalities:
@@ -110,15 +110,6 @@ Mindset is designed for individuals seeking personalized support for mental heal
 **Recommendation System**: Suggesting content based on user interests <br>
 **User Profile Management**: Storing and managing user information (username, password, name, profile photo, interests) <br>
 **Content Routing**: Handling user requests for specific content types
-
-## ORM: 
-
-```
-[Front-end] --> [Back-end] --> [Database]
-                                            |
-                                            v
-                                        [Deployment]
-```
 
 ## **IMPORTANT NOTE**
 Before running the application, make sure to create a test & admin account from the `/signup` endpoint.
